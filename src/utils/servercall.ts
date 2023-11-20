@@ -1,6 +1,6 @@
 
 
-const url = 'http://127.0.0.1:8000/stephen/'; //'http://3.90.242.65/stephen/'; //Replace with your API endpoint
+const url = 'http://3.90.242.65/stephen/'; //'http://127.0.0.1:8000/stephen/'; ////Replace with your API endpoint
 
 
 import { displayLoginForm } from "./login";
