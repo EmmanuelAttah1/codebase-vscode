@@ -1,13 +1,11 @@
 # My-Code-Base
 
-This is a VS code extension that automates drafting codebase documentation, enhancing productivity and fostering collaboration among developers.
-
-This extention uses GPT-4 to draft documentation and also has features to allow the user edit the AI drafted documentation.
+This VS Code extension streamlines codebase documentation by leveraging GPT-4 to automate the drafting process, boosting productivity and facilitating developer collaboration. It incorporates AI-generated documentation and provides editing capabilities for user refinement
 
 ## How to Use
 
 ### Installation
-Search for and install `codebase` from `TrinityX` in vs code extention store
+Search for and install `codebase` by `TrinityX` from the VS code extention store
 
 #### Commands and Shortcuts
 
