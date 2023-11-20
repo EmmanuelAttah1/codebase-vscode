@@ -1,0 +1,8 @@
+out
+dist
+node_modules
+.vscode-test/
+*.vsix
+codebase-0.0.1.vsix
+.mycodebase
+.mycodebase/config.json
