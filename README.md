@@ -9,8 +9,8 @@ Search for and install `codebase` by `TrinityX` from the VS code extention store
 
 #### Commands and Shortcuts
 
-- **Draft Doc for file:** `Ctrl + Shift + D` on mac : `Cmd + Shift + D`
-- **View Drafted Docs:** `Ctrl + Shift + L` on mac : `Cmd + Shift + L` [Then click on code section or line to see doc ]
+- **Draft Doc for file:** `Ctrl + Shift + D` or `Cmd + Shift + D` on mac 
+- **View Drafted Docs:** `Ctrl + Shift + L` or `Cmd + Shift + L` on mac [Then click on code section or line to see doc ]
 
 
 ### Authentication
