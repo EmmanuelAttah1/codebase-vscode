@@ -1,6 +1,6 @@
 # My-Code-Base
 
-This VS Code extension helps by automatically creating documentation for code. It uses GPT-4, an advanced AI, to write this documentation for you. Plus, it lets you make any changes you want to the AI's drafted documentation.
+This VS Code extension automatically draft documentation for code. It uses GPT-4, to write this documentation for you. Plus, it lets you make any changes you want to the AI's drafted documentation.
 
 ## How to Use
 
