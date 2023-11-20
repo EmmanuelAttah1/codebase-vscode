@@ -1,11 +1,12 @@
-import * as vscode from 'vscode';
 
-const url = 'http://3.90.242.65/stephen/'; //'http://127.0.0.1:8000/stephen/'; Replace with your API endpoint
+
+const url = 'http://127.0.0.1:8000/stephen/'; //'http://3.90.242.65/stephen/'; //Replace with your API endpoint
 
 
 import { displayLoginForm } from "./login";
 import { readConfigJSON } from './file_management/read_config';
 import { saveWorkSpaceName } from './file_management/save_workpace_name';
+import { updateWorkSpaceData } from "./file_management/update_work_space_name";
 
 const data = {
     key1: 'value1',
@@ -31,7 +32,6 @@ export const makeServerCall = (method: string, path: string, data: any) => {
                 }
 
                 token = store.token;
-                // console.log("token is ", token);
 
                 requestOptions['headers'] = {
                     Authorization : `Token ${token}`,
@@ -66,12 +66,24 @@ export const makeServerCall = (method: string, path: string, data: any) => {
             })
             .then((responseData:any) => {
                 // Handle the response data
-                // console.log('Response:', responseData);
+                console.log('Response:', responseData);
                 if(responseData.token !== undefined){
                     const token = responseData.token;
+                    console.log(token);
 
+                    console.log("token is ", store);
+
+                    // readConfigJSON();
+                    
                     //fs.writeFileSync(configPath, JSON.stringify(config, null, 2));
-                    saveWorkSpaceName(store.projectName, token);
+                    //saveWorkSpaceName(store.projectName, token);
+                    console.log("the store is ", store);
+                    
+                    
+                    const myPath = store.path.replaceAll("\\","/");
+                    console.log("my path is ",myPath);
+                    
+                    updateWorkSpaceData(store.projectName,token,myPath);
                 }
 
                 resolve(responseData);

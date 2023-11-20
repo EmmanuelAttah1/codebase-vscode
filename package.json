@@ -3,7 +3,7 @@
   "displayName": "codebase",
   "description": "AI Powered Documentation generator",
   "publisher": "TrinityX",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "engines": {
     "vscode": "^1.83.0"
   },

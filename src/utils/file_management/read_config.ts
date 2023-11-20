@@ -2,18 +2,26 @@ import * as vscode from 'vscode';
 import * as fs from 'fs';
 import * as path from 'path';
 
+let data : any;
+
 export function readConfigJSON() {
 
     const activeEditor = vscode.window.activeTextEditor;
 
+    let document;
+
     if (!activeEditor) {
-        console.error('No active editor found.');
-        return false;
+        if(!data){
+            console.error('No active editor found.');
+            return false;
+        }
+        document = data;
+    }else{
+        document = activeEditor.document.uri;
+        data = document;
     }
 
-    const document = activeEditor.document;
-
-    const rootPath = vscode.workspace.getWorkspaceFolder(document.uri);
+    const rootPath = vscode.workspace.getWorkspaceFolder(document);
 
     if (!rootPath) {
         console.error('No workspace folder found for the active editor.');
@@ -36,7 +44,7 @@ export function readConfigJSON() {
         try {
             // Parse the JSON content
             const parsedData = JSON.parse(jsonData);
-            // console.log(parsedData);
+            console.log(parsedData);
             return parsedData;
         } catch (error) {
             console.error('Error parsing JSON:', error);

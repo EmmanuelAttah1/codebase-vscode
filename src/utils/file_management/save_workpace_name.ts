@@ -2,9 +2,13 @@ import * as vscode from 'vscode';
 import * as fs from 'fs';
 import * as path from 'path';
 
+
 export const saveWorkSpaceName = (name:string,token:string) =>{
 
     const activeEditor = vscode.window.activeTextEditor;
+
+    console.log("editor ", activeEditor?.document);
+    
 
     if (!activeEditor) {
         console.error('No active editor found.');
@@ -22,10 +26,16 @@ export const saveWorkSpaceName = (name:string,token:string) =>{
 
     const folderPath = rootPath.uri.fsPath;
 
+    const parentFolder = path.join(folderPath, '.mycodebase');
+
+    console.log("parent folder ", parentFolder);
+    
+
     // Use the returned value here
     const data = {
         projectName: name,
         token:token,
+        path:parentFolder,
         description: "Enter project description here"
     };
 
@@ -35,7 +45,7 @@ export const saveWorkSpaceName = (name:string,token:string) =>{
     // const rootPath = vscode.workspace.workspaceFolders![0].uri.fsPath;
 
     // Create the .mycodebase directory if it doesn't exist
-    const myCodebaseDir = path.join(folderPath, '.mycodebase');
+    const myCodebaseDir = parentFolder;
     if (!fs.existsSync(myCodebaseDir)) {
         fs.mkdirSync(myCodebaseDir);
     }

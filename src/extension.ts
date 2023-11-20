@@ -78,7 +78,6 @@ const disposable = vscode.window.onDidChangeTextEditorVisibleRanges(event => {
 // Your extension is activated the very first time the command is executed
 export function activate(context: vscode.ExtensionContext) {
 
-
 	function logCursorPosition(editor: vscode.TextEditor | undefined) {
         if (!editor) {
             return;
@@ -404,7 +403,7 @@ export function activate(context: vscode.ExtensionContext) {
 						saveWorkSpaceName(result,"token");
 						saveWorkSpaceNameToServer(result);
 						hideLoading("Project Created");
-						weGocontinue = false
+						weGocontinue = false;
 						// const form = new FormData();
 						// form.append("name",result);
 
